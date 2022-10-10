@@ -27,8 +27,8 @@ public class main {
         // Create a new list to storage the Total Point
         ArrayList<String> point = new ArrayList<>(Arrays.asList(newPoints.split(",")));
         // Check if input is not grater than arraySize
-        if (point.size() > Integer.valueOf(arraySize)){
-            System.out.println("The number of input Point total can't over " + arraySize + ". Please start over.");
+        if (point.size() != Integer.valueOf(arraySize)){
+            System.out.println("The input of Point total should be " + arraySize + " in total. Please start over.");
             System.exit(0);
         }
 
@@ -40,8 +40,8 @@ public class main {
         // Create a new list to storage the Earned Point
         ArrayList<String> earned = new ArrayList<>(Arrays.asList(newEarns.split(",")));
         // Check if input is not grater than arraySize
-        if (earned.size() > Integer.valueOf(arraySize)){
-            System.out.println("The number of input Earned Point can't over " + arraySize + ". Please start over.");
+        if (earned.size() != Integer.valueOf(arraySize)){
+            System.out.println("The input of Earned Point should be " + arraySize + " in total. Please start over.");
             System.exit(0);
         }
 
@@ -53,8 +53,8 @@ public class main {
         // Create a new list to storage the Assigment Percentage
         ArrayList<String> percent = new ArrayList<>(Arrays.asList(newPercents.split(",")));
         // Check if input is not grater than arraySize
-        if (percent.size() > Integer.valueOf(arraySize)){
-            System.out.println("The number of Assigment Percentage can't over " + arraySize + ". Please start over.");
+        if (percent.size() != Integer.valueOf(arraySize)){
+            System.out.println("The input of Assigment Percentage should be " + arraySize + " in total. Please start over.");
             System.exit(0);
         }
 
