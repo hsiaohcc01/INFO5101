@@ -159,8 +159,13 @@ public class Manager extends JFrame implements ActionListener {
 		query.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String sID = id.getText();
-				if (sID.equals(""))
-					sID = "--";
+				if (sID.equals("")) {
+					JOptionPane.showMessageDialog(null, "Please Enter the Student's ID");
+					return;
+				}
+
+//				if (sID.equals(""))
+//					sID = "--";
 
 				String sname = name.getText();
 				if (sname.equals(""))
@@ -227,14 +232,20 @@ public class Manager extends JFrame implements ActionListener {
 		delete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String sID = id.getText();
+				if (sID.equals("")) {
+					JOptionPane.showMessageDialog(null, "Please Enter the Student's ID");
+					return;
+				}
+
 				int flag = fun.find(sID);
-				if (flag == -1) {
-					JOptionPane.showMessageDialog(null, "Can't Find This Student\n Please Enter Again");
+				if (flag == -1 ) {
+					JOptionPane.showMessageDialog(null, "Can't Find This Student. Please Enter Again");
 				} else {
 					fun.delete(sID);
 					fun.writefile();
 					JOptionPane.showMessageDialog(null, "Delete Success\n");
 				}
+
 				id.setText("");
 				name.setText("");
 				age.setText("");
@@ -248,9 +259,14 @@ public class Manager extends JFrame implements ActionListener {
 		modify.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String sID = id.getText();
+				if (sID.equals("")) {
+					JOptionPane.showMessageDialog(null, "Please Enter the Student's ID");
+					return;
+				}
+
 				int flag = fun.find(sID);
 				if (flag == -1) {
-					JOptionPane.showMessageDialog(null, "Can't Find This Student\n Please Enter Again");
+					JOptionPane.showMessageDialog(null, "Can't Find This Student. Please Enter Again");
 					return;
 				}
 
